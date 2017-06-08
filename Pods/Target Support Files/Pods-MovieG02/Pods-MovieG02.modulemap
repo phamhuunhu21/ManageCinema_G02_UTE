@@ -1,0 +1,6 @@
+framework module Pods_MovieG02 {
+  umbrella header "Pods-MovieG02-umbrella.h"
+
+  export *
+  module * { export * }
+}
