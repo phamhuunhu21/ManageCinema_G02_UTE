@@ -146,7 +146,6 @@ class SignInAndSignUpViewController: UIViewController, UITextFieldDelegate {
     
     func presentLoggedInScreen(){
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //let loggedInVC:UserViewController = storyboard.instantiateViewController(withIdentifier: "LoggedInVC") as! UserViewController
         let loggedInVC:HomeViewController = storyboard.instantiateViewController(withIdentifier: "LoggedInHomeVC") as! HomeViewController
         self.present(loggedInVC, animated: true, completion: nil)
     }

@@ -13,6 +13,9 @@ import FirebaseDatabase
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var menuView: UIView!
+    var menuShowing:Bool = false
     var movie = [Movie]()
     var filteredMovie = [Movie]()
     var ref: DatabaseReference!
@@ -23,6 +26,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        menuView.layer.shadowOpacity = 1
+        menuView.layer.shadowRadius = 6
         ref = Database.database().reference()
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.scopeButtonTitles = ["All", "Now Showing", "Coming Soon"]
@@ -48,7 +53,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let title_Snap = dictionary["title"] as? String
                 let url_Image = dictionary["urlImage"] as? String
                 let caTeGoRy = dictionary["category"] as? String
-                self.movie.append(Movie(title: title_Snap!, type: type_Snap!, urlImage: url_Image!, category: caTeGoRy!))
+                let detail_Snap = dictionary["detail"] as? String
+                let director_Snap = dictionary["director"] as? String
+                let actor_Snap = dictionary["actor"] as? String
+                let cinema_Snap = dictionary["cinema"] as? String
+                let length_Snap = dictionary["length"] as? String
+                let releaseDate_Snap = dictionary["releaseDate"] as? String
+                self.movie.append(Movie(title: title_Snap!, type: type_Snap!, urlImage: url_Image!, category: caTeGoRy!, detail: detail_Snap!, director: director_Snap!, actor: actor_Snap!, cinema: cinema_Snap!, length: length_Snap!, releaseDate: releaseDate_Snap!))
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -93,7 +104,31 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showDetail":
+                let movieDetailVC = segue.destination as! DetailMovieViewController
+                if let indexPath = self.tableView.indexPathForSelectedRow {
+                    movieDetailVC.movieDetail = movieAtIndexPath(indexPath: indexPath as NSIndexPath)
+                }
+            default:
+                break
+            }
+        }
+    }
 
+    func movieAtIndexPath(indexPath: NSIndexPath) -> Movie {
+        if searchController.isActive && searchController.searchBar.text != ""
+        {
+            return filteredMovie[indexPath.row]
+        }
+        else {
+            return movie[indexPath.row]
+        }
+    }
+    
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filteredMovie = movie.filter { mv in
             let categoryMatch = (scope == "All") || (mv.getCategory() == scope)
@@ -102,6 +137,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.reloadData()
     }
+    
+    @IBAction func openMenu(_ sender: Any) {
+        if menuShowing {
+            leadingConstraint.constant = -180
+        }
+        else {
+            leadingConstraint.constant = 0
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+        menuShowing = !menuShowing
+    }
+    
 }
 
 class Downloader {

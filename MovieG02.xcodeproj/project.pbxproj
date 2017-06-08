@@ -18,6 +18,7 @@
 		59F4B91E1EE9981200FB8B02 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4B91D1EE9981200FB8B02 /* HomeViewController.swift */; };
 		59F4B9201EE9A2C100FB8B02 /* SignInAndSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4B91F1EE9A2C100FB8B02 /* SignInAndSignUpViewController.swift */; };
 		59F4B9221EE9A66A00FB8B02 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4B9211EE9A66A00FB8B02 /* Validate.swift */; };
+		59F4B9241EE9D76A00FB8B02 /* DetailMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4B9231EE9D76A00FB8B02 /* DetailMovieViewController.swift */; };
 		C195A2D801DD4880D3AB95E0 /* Pods_MovieG02.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD7E4CF5C74F49930506D06 /* Pods_MovieG02.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		59F4B91D1EE9981200FB8B02 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		59F4B91F1EE9A2C100FB8B02 /* SignInAndSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInAndSignUpViewController.swift; sourceTree = "<group>"; };
 		59F4B9211EE9A66A00FB8B02 /* Validate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
+		59F4B9231EE9D76A00FB8B02 /* DetailMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMovieViewController.swift; sourceTree = "<group>"; };
 		CBD7E4CF5C74F49930506D06 /* Pods_MovieG02.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieG02.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2819476E7F9C8652A61504D /* Pods-MovieG02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieG02.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieG02/Pods-MovieG02.debug.xcconfig"; sourceTree = "<group>"; };
 		DFDA5F5241F6ABCB1D433B36 /* Pods-MovieG02.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieG02.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieG02/Pods-MovieG02.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				59F4B9211EE9A66A00FB8B02 /* Validate.swift */,
 				59F4B91F1EE9A2C100FB8B02 /* SignInAndSignUpViewController.swift */,
 				59F4B91D1EE9981200FB8B02 /* HomeViewController.swift */,
+				59F4B9231EE9D76A00FB8B02 /* DetailMovieViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				59F4B91A1EE996EC00FB8B02 /* HomeTableViewCell.swift in Sources */,
 				59F4B9221EE9A66A00FB8B02 /* Validate.swift in Sources */,
 				59F4B9201EE9A2C100FB8B02 /* SignInAndSignUpViewController.swift in Sources */,
+				59F4B9241EE9D76A00FB8B02 /* DetailMovieViewController.swift in Sources */,
 				59F4B9051EE991AB00FB8B02 /* ViewController.swift in Sources */,
 				59F4B91C1EE997B900FB8B02 /* Movie.swift in Sources */,
 				59F4B9031EE991AB00FB8B02 /* AppDelegate.swift in Sources */,
