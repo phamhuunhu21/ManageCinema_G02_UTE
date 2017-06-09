@@ -22,7 +22,7 @@ class Movie : NSObject {
     private var urlImage : String?
     private var category : String?
     
-    init(title: String, type: String, urlImage: String, category: String, detail: String, director: String, actor: String, cinema: String, length: String, releaseDate: String) {
+    init(title: String, type: String, urlImage: String, category: String, detail: String, director: String, actor: String, cinema: String, length: String, releaseDate: String, id: String) {
         self.title = title
         self.type = type
         self.urlImage = urlImage
@@ -33,6 +33,7 @@ class Movie : NSObject {
         self.cinema = cinema
         self.length = length
         self.releaseDate = releaseDate
+        self.id = id
     }
     
     func getId () -> String {
@@ -78,4 +79,5 @@ class Movie : NSObject {
     func getLength() -> String {
         return length!
     }
+    
 }

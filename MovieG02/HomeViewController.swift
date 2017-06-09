@@ -59,7 +59,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let cinema_Snap = dictionary["cinema"] as? String
                 let length_Snap = dictionary["length"] as? String
                 let releaseDate_Snap = dictionary["releaseDate"] as? String
-                self.movie.append(Movie(title: title_Snap!, type: type_Snap!, urlImage: url_Image!, category: caTeGoRy!, detail: detail_Snap!, director: director_Snap!, actor: actor_Snap!, cinema: cinema_Snap!, length: length_Snap!, releaseDate: releaseDate_Snap!))
+                let id_Snap = dictionary["id"] as? String
+                self.movie.append(Movie(title: title_Snap!, type: type_Snap!, urlImage: url_Image!, category: caTeGoRy!, detail: detail_Snap!, director: director_Snap!, actor: actor_Snap!, cinema: cinema_Snap!, length: length_Snap!, releaseDate: releaseDate_Snap!, id: id_Snap!))
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

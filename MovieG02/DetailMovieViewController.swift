@@ -39,4 +39,17 @@ class DetailMovieViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func bookMovieButtonTapped(_ sender: Any) {
+        let idMovie = movieDetail?.getId()
+        performSegue(withIdentifier: "showTimeBook", sender: idMovie)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTimeBook" {
+            if let destination = segue.destination as? ShowTimeBookViewController {
+                destination.passedData = sender as? String
+            }
+        }
+    }
+    
 }

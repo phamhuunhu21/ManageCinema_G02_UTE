@@ -297,6 +297,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjl-3c-6ny">
                                 <rect key="frame" x="119" y="608" width="136" height="39"/>
                                 <state key="normal" title="Đặt vé"/>
+                                <connections>
+                                    <action selector="bookMovieButtonTapped:" destination="sMt-eL-NkG" eventType="touchUpInside" id="RHH-f9-BvS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -366,11 +369,46 @@
                         <outlet property="releaseDateLabel" destination="nQU-9m-uDB" id="6yr-ig-QSg"/>
                         <outlet property="titleLbl" destination="9aJ-Ir-i6R" id="afY-sB-9vT"/>
                         <outlet property="typeLbl" destination="FcA-tb-Eez" id="oEx-hY-7hh"/>
+                        <segue destination="CZ7-ls-bRK" kind="show" identifier="showTimeBook" id="3oi-DX-wVs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MFV-S3-Wdn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1868" y="-282.00899550224892"/>
+        </scene>
+        <!--Show Time Book View Controller-->
+        <scene sceneID="pHW-Hu-S6n">
+            <objects>
+                <viewController id="CZ7-ls-bRK" customClass="ShowTimeBookViewController" customModule="MovieG02" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XhY-Nu-ciZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="F2Z-IM-9fU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ec8-vK-f6V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdn-Jr-3fL">
+                                <rect key="frame" x="85" y="304" width="205" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD6-QE-A4z">
+                                <rect key="frame" x="95" y="211" width="185" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstButton" destination="xD6-QE-A4z" id="IBl-Cr-NEo"/>
+                        <outlet property="secondButton" destination="wdn-Jr-3fL" id="GHe-eY-3Ro"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="izj-7F-beh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2648.8000000000002" y="-282.00899550224892"/>
         </scene>
         <!--Sign In And Sign Up View Controller-->
         <scene sceneID="fd9-3a-oX9">
