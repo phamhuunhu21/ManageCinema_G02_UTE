@@ -1,8 +1,8 @@
 //
-//  BookMovieLine.swift
+//  Cinema.swift
 //  MovieG02
 //
-//  Created by Pham Huu Nhu on 6/9/17.
+//  Created by Cntt28 on 6/10/17.
 //  Copyright © 2017 Pham Huu Nhu. All rights reserved.
 //
 

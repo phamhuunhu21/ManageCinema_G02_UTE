@@ -10,55 +10,72 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class ShowTimeBookViewController: UIViewController {
+class ShowTimeBookViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var firstButton: UIButton!
-    @IBOutlet weak var secondButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+   
     
     var passedData: String!
     var ref: DatabaseReference!
-    var refHandler: UInt!
+    var listCinema = [String]()
+    var list = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        //idMovieButton.setTitle(passedData, for: .normal)
-        if (passedData != nil) {
-            ref.child("Cinema").child(passedData).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let value = snapshot.value as? [String: AnyObject] {
-                    let cinema1 = value["cinema1"] as? String ?? ""
-                    let cinema2 = value["cinema2"] as? String ?? ""
-                    
-                    self.firstButton.setTitle(cinema1, for: .normal)
-                    self.secondButton.setTitle(cinema2, for: .normal)
-                }
-            })
-        }
-        /*refHandler = ref.child("Cinema").child("1").observe(.childAdded, with: { (snapshot) in
-            if let value = snapshot.value as? [String: AnyObject] {
-                let cinema1 = value["cinema1"] as? String ?? ""
-                let cinema2 = value["cinema2"] as? String ?? ""
-                
-                self.firstButton.setTitle(cinema1, for: .normal)
-                self.secondButton.setTitle(cinema2, for: .normal)
-            }
-        })*/
+        getDataCinema()
+        //getDataCinema()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    func getDataCinema() {
+        self.listCinema = [String]()
+        if (passedData != nil) {
+            ref.child("Cinema").child(passedData).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let value = snapshot.value as? [String: AnyObject] {
+                    let cinema1 = value["cinema1"] as? String ?? ""
+                    self.listCinema.append(cinema1)
+                    let cinema2 = value["cinema2"] as? String ?? ""
+                    self.listCinema.append(cinema2)
+                    let cinema3 = value["cinema3"] as? String ?? ""
+                    self.listCinema.append(cinema3)
+                    let cinema4 = value["cinema4"] as? String ?? ""
+                    self.listCinema.append(cinema4)
+                    let cinema5 = value["cinema5"] as? String ?? ""
+                    self.listCinema.append(cinema5)
+                    //print(self.listCinema)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            })
+        }
     }
-    */
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listCinema.count
+    }
+    
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cinemaCell")
+        cell.textLabel?.text = listCinema[indexPath.row]
+        
+        return cell
+    }
+    
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }

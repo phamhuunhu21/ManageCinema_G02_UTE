@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailMovieViewController: UIViewController {
     
@@ -40,8 +41,13 @@ class DetailMovieViewController: UIViewController {
     }
     
     @IBAction func bookMovieButtonTapped(_ sender: Any) {
+        /*if Auth.auth().currentUser == nil {
+            let srclogin = self.storyboard?.instantiateViewController(withIdentifier: "login") as! SignInAndSignUpViewController
+            self.present(srclogin, animated: true)
+        }*/
         let idMovie = movieDetail?.getId()
         performSegue(withIdentifier: "showTimeBook", sender: idMovie)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,6 +56,11 @@ class DetailMovieViewController: UIViewController {
                 destination.passedData = sender as? String
             }
         }
+    }
+    
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
