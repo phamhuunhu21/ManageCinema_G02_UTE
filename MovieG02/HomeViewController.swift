@@ -13,9 +13,10 @@ import FirebaseDatabase
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    //@IBOutlet weak var leadingConstraint: NSLayoutConstraint!
-    //@IBOutlet weak var menuView: UIView!
-    //var menuShowing:Bool = false
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var menuView: UIView!
+    
+    var menuShowing:Bool = false
     var movie = [Movie]()
     var filteredMovie = [Movie]()
     var ref: DatabaseReference!
@@ -26,8 +27,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //menuView.layer.shadowOpacity = 1
-        //menuView.layer.shadowRadius = 6
+        menuView.layer.shadowOpacity = 1
+        menuView.layer.shadowRadius = 6
         ref = Database.database().reference()
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.scopeButtonTitles = ["All", "Now Showing", "Coming Soon"]
@@ -139,7 +140,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
-    /*@IBAction func openMenu(_ sender: Any) {
+    @IBAction func openMenu(_ sender: Any) {
         if menuShowing {
             leadingConstraint.constant = -180
         }
@@ -150,7 +151,37 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             })
         }
         menuShowing = !menuShowing
-    }*/
+    }
+    
+    @IBAction func userInfoButtonTapped(_ sender: Any) {
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let signOut:UserInfoViewController = storyboard.instantiateViewController(withIdentifier: "userinfo") as! UserInfoViewController
+        self.present(signOut, animated: true, completion: nil)
+    }
+    
+    @IBAction func changePasswordButtonTapped(_ sender: Any) {
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let changePass:ChangePasswordViewController = storyboard.instantiateViewController(withIdentifier: "changepass") as! ChangePasswordViewController
+        self.present(changePass, animated: true, completion: nil)
+    }
+    
+    @IBAction func historyBookButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func signOutButtonTapped(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let signOut:SignInAndSignUpViewController = storyboard.instantiateViewController(withIdentifier: "login") as! SignInAndSignUpViewController
+            self.present(signOut, animated: true, completion: nil)
+        }
+        catch {
+            let alert = UIAlertController(title: "Error", message: "Đăng xuất không thành công", preferredStyle: UIAlertControllerStyle.alert);
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil));
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     
 }
 

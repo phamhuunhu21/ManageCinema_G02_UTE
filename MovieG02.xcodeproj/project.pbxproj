@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		596E98701EF02A450066D8B0 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596E986F1EF02A450066D8B0 /* UserInfoViewController.swift */; };
+		596E98721EF039150066D8B0 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596E98711EF039150066D8B0 /* ChangePasswordViewController.swift */; };
 		59899F3E1EEADE8200711AB3 /* ShowTimeBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899F3D1EEADE8200711AB3 /* ShowTimeBookViewController.swift */; };
 		59F4B9031EE991AB00FB8B02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4B9021EE991AB00FB8B02 /* AppDelegate.swift */; };
 		59F4B9051EE991AB00FB8B02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4B9041EE991AB00FB8B02 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		596E986F1EF02A450066D8B0 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		596E98711EF039150066D8B0 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		59899F3D1EEADE8200711AB3 /* ShowTimeBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTimeBookViewController.swift; sourceTree = "<group>"; };
 		59F4B8FF1EE991AB00FB8B02 /* MovieG02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieG02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F4B9021EE991AB00FB8B02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 		59F4B9181EE996BA00FB8B02 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				596E98711EF039150066D8B0 /* ChangePasswordViewController.swift */,
+				596E986F1EF02A450066D8B0 /* UserInfoViewController.swift */,
 				59899F3D1EEADE8200711AB3 /* ShowTimeBookViewController.swift */,
 				59F4B9211EE9A66A00FB8B02 /* Validate.swift */,
 				59F4B91F1EE9A2C100FB8B02 /* SignInAndSignUpViewController.swift */,
@@ -268,9 +274,11 @@
 				59F4B91A1EE996EC00FB8B02 /* HomeTableViewCell.swift in Sources */,
 				59F4B9221EE9A66A00FB8B02 /* Validate.swift in Sources */,
 				59F4B9201EE9A2C100FB8B02 /* SignInAndSignUpViewController.swift in Sources */,
+				596E98701EF02A450066D8B0 /* UserInfoViewController.swift in Sources */,
 				59F4B9241EE9D76A00FB8B02 /* DetailMovieViewController.swift in Sources */,
 				59F4B9051EE991AB00FB8B02 /* ViewController.swift in Sources */,
 				59F4B91C1EE997B900FB8B02 /* Movie.swift in Sources */,
+				596E98721EF039150066D8B0 /* ChangePasswordViewController.swift in Sources */,
 				59F4B9031EE991AB00FB8B02 /* AppDelegate.swift in Sources */,
 				59899F3E1EEADE8200711AB3 /* ShowTimeBookViewController.swift in Sources */,
 			);
