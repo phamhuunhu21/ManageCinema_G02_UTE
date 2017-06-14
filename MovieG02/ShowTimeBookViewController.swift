@@ -67,12 +67,26 @@ class ShowTimeBookViewController: UIViewController, UITableViewDelegate, UITable
     }
     
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cinemaCell")
-        cell.textLabel?.text = listCinema[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cinemaCell") as! CinemaTableViewCell
+        cell.cinemaLabel.text = listCinema[indexPath.row]
         
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showDate":
+                let movieDetailVC = segue.destination as! ShowDateBookViewController
+                if let indexPath = self.tableView.indexPathForSelectedRow {
+                    movieDetailVC.passedDataDate = listCinema[indexPath.row]
+                    movieDetailVC.passedDateIdMovie = passedData
+                }
+            default:
+                break
+            }
+        }
+    }
     
     @IBAction func backButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)

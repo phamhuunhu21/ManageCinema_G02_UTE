@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		595F6C141EF1E3D40001E716 /* ShowDateBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595F6C131EF1E3D40001E716 /* ShowDateBookViewController.swift */; };
+		595F6C161EF1E86C0001E716 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595F6C151EF1E86C0001E716 /* DateTableViewCell.swift */; };
+		595F6C181EF1EAF60001E716 /* CinemaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595F6C171EF1EAF60001E716 /* CinemaTableViewCell.swift */; };
 		596E98701EF02A450066D8B0 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596E986F1EF02A450066D8B0 /* UserInfoViewController.swift */; };
 		596E98721EF039150066D8B0 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596E98711EF039150066D8B0 /* ChangePasswordViewController.swift */; };
 		59899F3E1EEADE8200711AB3 /* ShowTimeBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899F3D1EEADE8200711AB3 /* ShowTimeBookViewController.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		595F6C131EF1E3D40001E716 /* ShowDateBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDateBookViewController.swift; sourceTree = "<group>"; };
+		595F6C151EF1E86C0001E716 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		595F6C171EF1EAF60001E716 /* CinemaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinemaTableViewCell.swift; sourceTree = "<group>"; };
 		596E986F1EF02A450066D8B0 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		596E98711EF039150066D8B0 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		59899F3D1EEADE8200711AB3 /* ShowTimeBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTimeBookViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 			children = (
 				59F4B9191EE996EC00FB8B02 /* HomeTableViewCell.swift */,
 				59F4B9061EE991AB00FB8B02 /* Main.storyboard */,
+				595F6C171EF1EAF60001E716 /* CinemaTableViewCell.swift */,
+				595F6C151EF1E86C0001E716 /* DateTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 			children = (
 				596E98711EF039150066D8B0 /* ChangePasswordViewController.swift */,
 				596E986F1EF02A450066D8B0 /* UserInfoViewController.swift */,
+				595F6C131EF1E3D40001E716 /* ShowDateBookViewController.swift */,
 				59899F3D1EEADE8200711AB3 /* ShowTimeBookViewController.swift */,
 				59F4B9211EE9A66A00FB8B02 /* Validate.swift */,
 				59F4B91F1EE9A2C100FB8B02 /* SignInAndSignUpViewController.swift */,
@@ -269,15 +278,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				595F6C141EF1E3D40001E716 /* ShowDateBookViewController.swift in Sources */,
 				FB3FBB321EEBD5DF00A4AE24 /* Cinema.swift in Sources */,
 				59F4B91E1EE9981200FB8B02 /* HomeViewController.swift in Sources */,
 				59F4B91A1EE996EC00FB8B02 /* HomeTableViewCell.swift in Sources */,
 				59F4B9221EE9A66A00FB8B02 /* Validate.swift in Sources */,
 				59F4B9201EE9A2C100FB8B02 /* SignInAndSignUpViewController.swift in Sources */,
 				596E98701EF02A450066D8B0 /* UserInfoViewController.swift in Sources */,
+				595F6C161EF1E86C0001E716 /* DateTableViewCell.swift in Sources */,
 				59F4B9241EE9D76A00FB8B02 /* DetailMovieViewController.swift in Sources */,
 				59F4B9051EE991AB00FB8B02 /* ViewController.swift in Sources */,
 				59F4B91C1EE997B900FB8B02 /* Movie.swift in Sources */,
+				595F6C181EF1EAF60001E716 /* CinemaTableViewCell.swift in Sources */,
 				596E98721EF039150066D8B0 /* ChangePasswordViewController.swift in Sources */,
 				59F4B9031EE991AB00FB8B02 /* AppDelegate.swift in Sources */,
 				59899F3E1EEADE8200711AB3 /* ShowTimeBookViewController.swift in Sources */,
