@@ -13,7 +13,7 @@ class ShowDateBookViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var tableView: UITableView!
     
-    var passedDataDate: String!
+    var passedDataCinema: String!
     var passedDateIdMovie: String!
     var ref: DatabaseReference!
     var listDate = [String]()
@@ -32,8 +32,8 @@ class ShowDateBookViewController: UIViewController, UITableViewDelegate, UITable
     
     func getDataDate() {
         self.listDate = [String]()
-        if (passedDataDate != nil && passedDateIdMovie != nil) {
-            ref.child("DateBook").child(passedDateIdMovie).child(passedDataDate).observeSingleEvent(of: .value, with: { (snapshot) in
+        if (passedDataCinema != nil && passedDateIdMovie != nil) {
+            ref.child("DateBook").child(passedDateIdMovie).child(passedDataCinema).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let value = snapshot.value as? [String: AnyObject] {
                     let date1 = value["date1"] as? String ?? ""
                     self.listDate.append(date1)
@@ -65,6 +65,22 @@ class ShowDateBookViewController: UIViewController, UITableViewDelegate, UITable
         cell.TestLabel.text = listDate[indexPath.row]
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+                case "showTime":
+                    let movieDetailVC = segue.destination as! ShowTimeBookTicketViewController
+                    if let indexPath = self.tableView.indexPathForSelectedRow {
+                        movieDetailVC.passedDataIdMovie2 = passedDateIdMovie
+                        movieDetailVC.passedDataCinema2 = passedDataCinema
+                        movieDetailVC.passedDataDate = listDate[indexPath.row]
+                    }
+                default:
+                    break
+            }
+        }
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

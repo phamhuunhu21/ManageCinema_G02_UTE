@@ -79,7 +79,7 @@ class ShowTimeBookViewController: UIViewController, UITableViewDelegate, UITable
             case "showDate":
                 let movieDetailVC = segue.destination as! ShowDateBookViewController
                 if let indexPath = self.tableView.indexPathForSelectedRow {
-                    movieDetailVC.passedDataDate = listCinema[indexPath.row]
+                    movieDetailVC.passedDataCinema = listCinema[indexPath.row]
                     movieDetailVC.passedDateIdMovie = passedData
                 }
             default:
