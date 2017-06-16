@@ -41,19 +41,16 @@ class DetailMovieViewController: UIViewController {
     }
     
     @IBAction func bookMovieButtonTapped(_ sender: Any) {
-        /*if Auth.auth().currentUser == nil {
-            let srclogin = self.storyboard?.instantiateViewController(withIdentifier: "login") as! SignInAndSignUpViewController
-            self.present(srclogin, animated: true)
-        }*/
-        let idMovie = movieDetail?.getId()
-        performSegue(withIdentifier: "showTimeBook", sender: idMovie)
+        //let idMovie = movieDetail?.getId()
+        performSegue(withIdentifier: "showTimeBook", sender: self)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showTimeBook" {
             if let destination = segue.destination as? ShowTimeBookViewController {
-                destination.passedData = sender as? String
+                //destination.passedData = sender as? String
+                destination.passedData = self.movieDetail?.getId()
             }
         }
     }

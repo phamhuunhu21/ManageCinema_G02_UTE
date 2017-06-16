@@ -45,6 +45,23 @@ class ShowTimeBookTicketViewController: UIViewController, UITableViewDelegate, U
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "chooseChair":
+                let movieDetailVC = segue.destination as! ChooseChairViewController
+                if let indexPath = self.tableView.indexPathForSelectedRow {
+                    movieDetailVC.passedDataIdMovie3 = passedDataIdMovie2
+                    movieDetailVC.passedDataCinema3 = passedDataCinema2
+                    movieDetailVC.passedDataDate3 = passedDataDate
+                    movieDetailVC.passedDataTime = listTime[indexPath.row]
+                }
+            default:
+                break
+            }
+        }
+    }
+    
     func getDataTime() {
         self.listTime = [String]()
         if (passedDataDate != nil && passedDataIdMovie2 != nil && passedDataCinema2 != nil) {

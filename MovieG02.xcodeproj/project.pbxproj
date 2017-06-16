@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590E5D6E1EF3364300069681 /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E5D6D1EF3364300069681 /* BillViewController.swift */; };
 		5955D3371EF29C8F003E29EC /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955D3361EF29C8E003E29EC /* TimeTableViewCell.swift */; };
 		5955D33B1EF29DFA003E29EC /* ShowTimeBookTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955D33A1EF29DFA003E29EC /* ShowTimeBookTicketViewController.swift */; };
 		5955D33D1EF2BAA4003E29EC /* ChooseChairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5955D33C1EF2BAA4003E29EC /* ChooseChairViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		590E5D6D1EF3364300069681 /* BillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		5955D3361EF29C8E003E29EC /* TimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
 		5955D33A1EF29DFA003E29EC /* ShowTimeBookTicketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTimeBookTicketViewController.swift; sourceTree = "<group>"; };
 		5955D33C1EF2BAA4003E29EC /* ChooseChairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChairViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		59F4B9181EE996BA00FB8B02 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				590E5D6D1EF3364300069681 /* BillViewController.swift */,
 				5955D33C1EF2BAA4003E29EC /* ChooseChairViewController.swift */,
 				5955D33A1EF29DFA003E29EC /* ShowTimeBookTicketViewController.swift */,
 				596E98711EF039150066D8B0 /* ChangePasswordViewController.swift */,
@@ -295,6 +298,7 @@
 				5955D3371EF29C8F003E29EC /* TimeTableViewCell.swift in Sources */,
 				59F4B9221EE9A66A00FB8B02 /* Validate.swift in Sources */,
 				59F4B9201EE9A2C100FB8B02 /* SignInAndSignUpViewController.swift in Sources */,
+				590E5D6E1EF3364300069681 /* BillViewController.swift in Sources */,
 				596E98701EF02A450066D8B0 /* UserInfoViewController.swift in Sources */,
 				595F6C161EF1E86C0001E716 /* DateTableViewCell.swift in Sources */,
 				59F4B9241EE9D76A00FB8B02 /* DetailMovieViewController.swift in Sources */,
