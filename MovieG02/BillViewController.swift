@@ -26,6 +26,7 @@ class BillViewController: UIViewController {
     var soLuong4:Int!
     var post4 = [String:AnyObject]()
     var listChair4:String!
+    var titleCinema:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class BillViewController: UIViewController {
             if let value = snapshot.value as? [String: AnyObject] {
                 let title = value["title"] as? String ?? ""
                 self.titleLabel.text = "Phim: " + title
+                self.titleCinema = title
             }
         })
         
@@ -51,12 +53,31 @@ class BillViewController: UIViewController {
     }
     
     @IBAction func finishButtonTapped(_ sender: Any) {
+        ref.child("Chair").child(passedDataIdMovie4).child(passedDataCinema4).child(passedDataDate4).child(passedDataTime4).updateChildValues(post4)
+        
+        getHistory()
         
         
-    ref.child("Chair").child(passedDataIdMovie4).child(passedDataCinema4).child(passedDataDate4).child(passedDataTime4).updateChildValues(post4)
     }
     
-    
+    func getHistory() {
+        let history : [String:AnyObject] = ["title" : titleCinema as AnyObject,
+                                            "cinema" : passedDataCinema4 as AnyObject,
+                                            "date" : passedDataDate4 as AnyObject,
+                                            "time" : passedDataTime4 as AnyObject,
+                                            "chair" : listChair4 as AnyObject]
+        if let uid = Auth.auth().currentUser?.uid {
+            ref.child("History").child(uid).childByAutoId().setValue(history)
+        }
+        
+        /*let alert = UIAlertController(title: "Thông báo", message: "Đặt phim thành công", preferredStyle: UIAlertControllerStyle.alert);
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil));
+         self.present(alert, animated: true, completion: nil)*/
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loggedInVC:HomeViewController = storyboard.instantiateViewController(withIdentifier: "LoggedInHomeVC") as! HomeViewController
+        self.present(loggedInVC, animated: true, completion: nil)
+    }
 
     @IBAction func backButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)

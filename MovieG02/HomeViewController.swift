@@ -166,6 +166,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func historyBookButtonTapped(_ sender: Any) {
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let changePass:HistoryViewController = storyboard.instantiateViewController(withIdentifier: "history") as! HistoryViewController
+        self.present(changePass, animated: true, completion: nil)
     }
     
     @IBAction func signOutButtonTapped(_ sender: Any) {
