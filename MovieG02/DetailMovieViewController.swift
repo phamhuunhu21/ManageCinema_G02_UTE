@@ -32,6 +32,8 @@ class DetailMovieViewController: UIViewController {
         actorLabel.text = movieDetail?.getActor()
         cinemaLabel.text = movieDetail?.getCinema()
         detailTextView.text = movieDetail?.getDetail()
+        let posterUrl = movieDetail?.getURLImage()
+        self.downloadImage(url: URL(string: posterUrl!)!)
         
     }
 
@@ -55,9 +57,27 @@ class DetailMovieViewController: UIViewController {
         }
     }
     
-    
     @IBAction func backButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            completion(data, response, error)
+            }.resume()
+    }
+    
+    func downloadImage(url: URL) -> Void{
+        getDataFromUrl(url: url) { (data, response, error)  in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() { () -> Void in
+                self.posterImg.image = UIImage(data: data)
+                //return UIImage(data: data)
+            }
+        }
     }
     
 }

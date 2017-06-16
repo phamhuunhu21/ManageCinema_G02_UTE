@@ -99,8 +99,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.typeLabel.text = mv.getType()
         // cell.posterImage.image = url
         
-        //let posterUrl: String = mv.getURLImage()
-        let posterUrl: String = loadingImage
+        let posterUrl: String = mv.getURLImage()
+        print(posterUrl)
+        //let posterUrl: String = loadingImage
         Downloader.downloadImage(url: URL(string: posterUrl)!, cell: cell)
         
         
