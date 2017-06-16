@@ -34,7 +34,6 @@ class DetailMovieViewController: UIViewController {
         detailTextView.text = movieDetail?.getDetail()
         let posterUrl = movieDetail?.getURLImage()
         self.downloadImage(url: URL(string: posterUrl!)!)
-        
     }
 
     override func didReceiveMemoryWarning() {

@@ -138,9 +138,11 @@ class ChooseChairViewController: UIViewController {
                 chair1.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            
+            isCheck1 = !isCheck1
         }
         
-        isCheck1 = !isCheck1
+        
     }
     
     @IBAction func chair2ButtonTapped(_ sender: Any) {
@@ -158,9 +160,10 @@ class ChooseChairViewController: UIViewController {
                 chair2.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheck2 = !isCheck2
         }
         
-        isCheck2 = !isCheck2
+        
     }
     @IBAction func chair3ButtonTapped(_ sender: Any) {
         if cA3 == "t" {
@@ -177,9 +180,10 @@ class ChooseChairViewController: UIViewController {
                 chair3.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheck3 = !isCheck3
         }
         
-        isCheck3 = !isCheck3
+        
     }
     @IBAction func chair4ButtonTapped(_ sender: Any) {
         if cA4 == "t" {
@@ -196,9 +200,10 @@ class ChooseChairViewController: UIViewController {
                 chair4.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheck4 = !isCheck4
         }
         
-        isCheck4 = !isCheck4
+        
     }
     
     @IBAction func chairB1ButtonTapped(_ sender: Any) {
@@ -216,9 +221,10 @@ class ChooseChairViewController: UIViewController {
                 chairB1.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckB1 = !isCheckB1
         }
         
-        isCheckB1 = !isCheckB1
+        
     }
     
     @IBAction func chairB2ButtonTapped(_ sender: Any) {
@@ -236,9 +242,10 @@ class ChooseChairViewController: UIViewController {
                 chairB2.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckB2 = !isCheckB2
         }
         
-        isCheckB2 = !isCheckB2
+        
     }
     
     @IBAction func chairB3ButtonTapped(_ sender: Any) {
@@ -256,9 +263,10 @@ class ChooseChairViewController: UIViewController {
                 chairB3.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckB3 = !isCheckB3
         }
         
-        isCheckB3 = !isCheckB3
+        
     }
     
     @IBAction func chairB4ButtonTapped(_ sender: Any) {
@@ -276,9 +284,10 @@ class ChooseChairViewController: UIViewController {
                 chairB4.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckB4 = !isCheckB4
         }
         
-        isCheckB4 = !isCheckB4
+        
     }
     
     @IBAction func chairC1ButtonTapped(_ sender: Any) {
@@ -296,9 +305,10 @@ class ChooseChairViewController: UIViewController {
                 chairC1.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckC1 = !isCheckC1
         }
         
-        isCheckC1 = !isCheckC1
+        
     }
     
     @IBAction func chairC2ButtonTapped(_ sender: Any) {
@@ -316,9 +326,10 @@ class ChooseChairViewController: UIViewController {
                 chairC2.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckC2 = !isCheckC2
         }
         
-        isCheckC2 = !isCheckC2
+        
     }
     
     @IBAction func chairC3ButtonTapped(_ sender: Any) {
@@ -336,9 +347,10 @@ class ChooseChairViewController: UIViewController {
                 chairC3.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckC3 = !isCheckC3
         }
         
-        isCheckC3 = !isCheckC3
+        
     }
     
     @IBAction func chairC4ButtonTapped(_ sender: Any) {
@@ -356,9 +368,10 @@ class ChooseChairViewController: UIViewController {
                 chairC4.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckC4 = !isCheckC4
         }
         
-        isCheckC4 = !isCheckC4
+        
     }
     
     @IBAction func chairD1ButtonTapped(_ sender: Any) {
@@ -376,9 +389,10 @@ class ChooseChairViewController: UIViewController {
                 chairD1.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckD1 = !isCheckD1
         }
         
-        isCheckD1 = !isCheckD1
+        
     }
     
     @IBAction func chairD2ButtonTapped(_ sender: Any) {
@@ -396,9 +410,10 @@ class ChooseChairViewController: UIViewController {
                 chairD2.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckD2 = !isCheckD2
         }
         
-        isCheckD2 = !isCheckD2
+        
     }
     
     @IBAction func chairD3ButtonTapped(_ sender: Any) {
@@ -416,9 +431,10 @@ class ChooseChairViewController: UIViewController {
                 chairD3.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckD3 = !isCheckD3
         }
         
-        isCheckD3 = !isCheckD3
+        
     }
     
     @IBAction func chairD4ButtonTapped(_ sender: Any) {
@@ -436,9 +452,10 @@ class ChooseChairViewController: UIViewController {
                 chairD4.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckD4 = !isCheckD4
         }
         
-        isCheckD4 = !isCheckD4
+        
     }
     
     @IBAction func chairE1ButtonTapped(_ sender: Any) {
@@ -456,9 +473,10 @@ class ChooseChairViewController: UIViewController {
                 chairE1.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckE1 = !isCheckE1
         }
         
-        isCheckE1 = !isCheckE1
+        
     }
     
     @IBAction func chairE2ButtonTapped(_ sender: Any) {
@@ -476,9 +494,10 @@ class ChooseChairViewController: UIViewController {
                 chairE2.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckE2 = !isCheckE2
         }
         
-        isCheckE2 = !isCheckE2
+        
     }
     
     @IBAction func chairE3ButtonTapped(_ sender: Any) {
@@ -496,9 +515,10 @@ class ChooseChairViewController: UIViewController {
                 chairE3.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckE3 = !isCheckE3
         }
         
-        isCheckE3 = !isCheckE3
+        
     }
     
     @IBAction func chairE4ButtonTapped(_ sender: Any) {
@@ -516,9 +536,10 @@ class ChooseChairViewController: UIViewController {
                 chairE4.backgroundColor = UIColor.white
                 soLuong -= 1
             }
+            isCheckE4 = !isCheckE4
         }
         
-        isCheckE4 = !isCheckE4
+        
     }
     
     
